@@ -1,0 +1,81 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 100px;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+  }
+
+/* 공지사항 content 영역 */
+main {
+    width: 1200px;
+    padding: 20px;
+    margin: 70px auto 100px;
+}
+/* 공지사항  */
+.content h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #000;
+    text-align: center;
+}
+/* 공지사항 게시물 상세 정보 관련 CSS */
+.board-item-detail h3 {
+    padding: 20px 0px;
+    margin-bottom: 10px;
+    border-top: 2px solid #000;
+    border-bottom: 1px solid #000;
+    font-size: 19px;
+    color: #000;
+}
+.board-item-detail p {
+    margin: 8px 0px;
+    font-size: 16px;
+}
+.board-item-detail p:nth-child(5) {
+    margin-top: 50px;
+}
+.content .btn {
+    width: 200px;
+    height: 50px;
+    background-color: #0077ae;
+    color: #fff;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 16px;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .product-card {
+        width: 22%; /* 한 줄에 4개 아이템 */
+    }
+}
+
+@media (max-width: 992px) {
+    .product-card {
+        width: 30%; /* 한 줄에 3개 아이템 */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        width: 45%; /* 한 줄에 2개 아이템 */
+    }
+}
+
+@media (max-width: 576px) {
+    .product-card {
+        width: 90%; /* 한 줄에 1개 아이템 */
+    }
+}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 상세 페이지</title>
+    <link rel="stylesheet" href="./css/pepperonipizza.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./javascript/jquery-1.12.3.js" defer type="text/javascript"></script>
+    <script src="./javascript/script.js" defer type="text/javascript"></script>
+    <script src="./javascript/pepperonipizza.js" defer type="text/javascript"></script>
+    <script src="./javascript/admin.js"></script>
+</head>
+<body><!-- navigation bar -->
+    <header>
+      <div class="top">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="로고"></a>
+        </div>
+        <div id="menu_bg"></div>   <!--서브메뉴 배경-->
+        <nav class="menu">
+          <div class="util_nav"> <!-- 로그인, 회원가입 / 관리자 (href=""에 연결시켜주기) -->
+            <a href="login.html" title="로그인" id="loginLink">로그인</a> <!-- 로그인 페이지 연결 -->
+            <a href="join.html" title="회원가입" id="signupLink">회원가입</a> <!-- 회원가입 페이지 연결 -->
+            <a href="admin.html" title="관리자" id="adminLink" style="display: none">관리자</a> <!-- 관리자 페이지 연결 -->
+            <a href="#" title="로그아웃" id="logoutLink" style="display: none">로그아웃</a>
+            <a href="cart.html" title="장바구니" id="cartLink" style="display: none;">장바구니</a>
+            <span id="welcomeMessage" style="display: none;"></span>
+          </div>           
+          <ul class="navi">
+            <li><a href="1.menulist.html">메뉴</a> <!-- 상품페이지랑 연결 -->
+              <ul class="submenu">
+                <li><a href="1.menulist.html">피자</a></li>
+                <li><a href="#">하프앤하프</a></li>
+                <li><a href="#">사이드디시</a></li>
+                <li><a href="#">인기세트메뉴</a></li>
+                <li><a href="#">마이키친</a></li>
+                <li><a href="#">음료&기타</a></li>
+              </ul>
+            </li>
+            <li><a href="#">e-쿠폰</a>
+              <ul class="submenu">
+                <li><a href="#">e-쿠폰 주문</a></li>
+                <li><a href="#">e-쿠폰 사용 안내</a></li>
+              </ul>
+            </li>
+            <li><a href="#">상품권 선물</a>
+              <ul class="submenu">
+                <li><a href="#">모바일상품권(도미노콘)</a></li>
+                <li><a href="#">금액상품권</a></li>
+                <li><a href="#">지류상품권</a></li>
+                <li><a href="#">상품권 사용 안내</a></li>
+              </ul>
+            </li>
+            <li><a href="#">이벤트/제휴</a> 
+              <ul class="submenu">
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">제휴할인</a></li>
+              </ul>
+            </li>          
+            <li><a href="boardList.html?categoryId=1">공지사항</a> <!-- 공지사항페이지랑 연결 -->
+              <ul class="submenu">
+                <li><a href="boardList.html?categoryId=1">도미노뉴스</a></li>
+                <li><a href="boardList.html?categoryId=2">보도자료</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- cart -->
+    <main class="content">
+      <div class="container">
+          <div class="hidden-price">
+            <label for="basePrice">기본 피자 가격</label>
+            <input type="text" name="basePrice" id="basePrice" value="29900" readonly>
+          </div>
+      
+          <div class="fixed-box">
+            <span class="img-box">
+              <img src="./images/pizza4.png" alt="리뉴얼 페퍼로니 피자" name="pizza4-img">
+            </span>
+          </div>
+  
+          <div class="menu-detail-area">
+            <span class="menu-title">
+              <h1>리뉴얼 페퍼로니 피자</h1>
+              <br>
+              <p>더욱 더 풍부해진 페퍼로니 피자!</p>
+              <br>
+              <p>갖가지 다양한 토핑과 함꼐 풍부한 풍미를 느껴보세요.</p>
+            </span>
+              <!-- 상세 옵션 선택 -->
+              <div class="select-box">
+                <div class="step-wrap">
+                  <div class="title-wrap">사이즈 선택</div>
+                  <div class="size-box">
+                    <label class="size-selector">
+                      <input type="radio" class="option" name="size" value="4000" checked>
+                      <span class="size-option-button">L 33,900</span>
+                    </label>
+                    <label class="size-selector">
+                      <input type="radio" class="option" name="size" value="0">
+                      <span class="size-option-button">M 29,900</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="step-wrap">
+                <div class="title-wrap">도우 선택</div>
+                <div class="option-box">
+                  <label class="custom-radio">
+                    <input type="radio" class="option" name="dough" value="3000" checked>
+                    <span class="radio-button"></span>
+                    <span class="radio-label">오리지널 슈퍼시드 화이버 함유 도우(+3000원)</span>
+                  </label>
+                  <label class="custom-radio">
+                    <input type="radio" class="option" name="dough" value="3000">
+                    <span class="radio-button"></span>
+                    <span class="radio-label">나폴리 슈퍼시드 화이버 함유 도우(+3000원)</span>
+                  </label>
+                  <label class="custom-radio">
+                    <input type="radio" class="option" name="dough" value="0">
+                    <span class="radio-button"></span>
+                    <span class="radio-label">오리지널 도우(+0원)</span>
+                  </label>
+                  <label class="custom-radio">
+                    <input type="radio" class="option" name="dough" value="0">
+                    <span class="radio-button"></span>
+                    <span class="radio-label">나폴리 도우(+0원)</span>
+                  </label>
+                  <label class="custom-radio">
+                    <input type="radio" class="option" name="dough" value="0">
+                    <span class="radio-button"></span>
+                    <span class="radio-label">씬 도우(+0원)(기본 갈릭 디핑 소스 미제공)</span>
+                  </label>
+                </div>
+              </div>
+      
+              <div class="step-wrap">
+                <div class="title-wrap">엣지 선택</div>
+                <div class="option-box">
+                  <label class="custom-radio">
+                    <input type="radio" class="option" name="edge" value="0" checked>
+                    <span class="radio-button"></span>
+                    <span class="radio-label">선택 안함(+0원)</span>
+                  </label>
+                  <label class="custom-radio">
+                    <input type="radio" class="option" name="edge" value="5000">
+                    <span class="radio-button"></span>
+                    <span class="radio-label">콩콩팥팥 크림 치즈 엣지(+5000원)</span>
+                  </label>
+                  <label class="custom-radio">
+                    <input type="radio" class="option" name="edge" value="5000">
+                    <span class="radio-button"></span>
+                    <span class="radio-label">더블 치즈 엣지(+5000원)</span>
+                  </label>
+                  <label class="custom-radio">
+                    <input type="radio" class="option" name="edge" value="5000">
+                    <span class="radio-button"></span>
+                    <span class="radio-label">트리플 치즈 버스트 엣지(+5000원)</span>
+                  </label>
+                  <label class="custom-radio">
+                    <input type="radio" class="option" name="edge" value="3000">
+                    <span class="radio-button"></span>
+                    <span class="radio-label">고구마츄 엣지(+3000원)</span>
+                  </label>
+                </div>
+              </div>
+      
+              <!-- 수량 선택 -->
+              <div class="step-wrap">
+                <div class="title-wrap">수량 선택</div>
+                <div class="quantity-selector">
+                  <button type="button" class="quantity-button-minus" onclick="decreaseQuantity()">−</button>
+                  <span class="quantity-display" id="quantity">1</span>
+                  <button type="button" class="quantity-button-plus" onclick="increaseQuantity()">+</button>
+                </div>
+              </div>
+              <!-- 총 금액 -->
+              <div class="step-wrap">
+                <div class="title-wrap">총 금액</div>
+                <div class="price-box">
+                  <span id="subTotal">36,900</span>
+                </div>
+                <div class="button-box">
+                  <button class="cart-button">장바구니</button> 
+                  <button class="order-button">주문하기</button>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+<footer>
+    <div class="bottom"> <!--bottom: 하단메뉴 + Copyright-->
+      <div class="btm_logo">
+        <img src="images/logo.png" alt="로고">
+        <p>1577-3082</p>
+      </div>
+      <div class="btmenu">
+        <ul>
+          <li><a href="#">이용약관</a></li> 
+          <li><a href="#"><b>개인정보 처리방침</b></a></li> 
+          <li><a href="#"><b>위치기반 서비스</b></a></li> 
+          <li><a href="#">청소년 보호방침</a></li> 
+          <li><a href="#">영상정보처리기기 운영관리방침</a></li> 
+          <li><a href="#">고객센터</a></li> 
+          <li><a href="#">인재채용</a></li>
+        </ul>
+      </div>
+      <div class="copy">
+        <p>06223 서울특별시 강남구 역삼로 25길 35(역삼동,청오큐브타워) 청오디피케이㈜ ㅣ 대표이사:오광현,김영훈</p>
+        <p>사업자 등록번호:220-81-03371 ㅣ 통신판매업신고:강남 5064호 ㅣ 개인정보 보호책임자:윤여진 ㅣ 민원 책임자:임영길</p>
+        <p>문의:webmaster@dominos.co.kr</p>
+        <p>COPYRIGHTⓒ Domino's Pizza. ALL RIGHTS RESERVED</p>
+        <p>청오디피케이㈜의 사전 서면동의 없이 도미노피자 사이트(PC, 모바일, 앱)의 일체의 정보, 콘텐츠 및 UI 등을 상업적 목적으로 전재, 전송, 스크래핑 등 무단 사용할 수 없습니다.<br>
+          도미노피자에서 판매되는 모든 상품은 청오디피케이㈜에서 책임지고 있습니다.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+</body>
+</html>

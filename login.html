@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./javascript/jquery-1.12.3.js" defer type="text/javascript"></script>
+    <script src="./javascript/script.js" defer type="text/javascript"></script>
+    <script src="./javascript/login.js" defer type="text/javascript"></script>
+    <script src="./javascript/admin.js"></script>
+</head>
+<body>
+    <header>
+        <div class="top">
+          <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="로고"></a>
+          </div>
+          <div id="menu_bg"></div>   <!--서브메뉴 배경-->
+          <nav class="menu">
+            <div class="util_nav"> <!-- 로그인, 회원가입 / 관리자 (href=""에 연결시켜주기) -->
+              <a href="login.html" title="로그인" id="loginLink">로그인</a> <!-- 로그인 페이지 연결 -->
+              <a href="join.html" title="회원가입" id="signupLink">회원가입</a> <!-- 회원가입 페이지 연결 -->
+              <a href="admin.html" title="관리자" id="adminLink" style="display: none">관리자</a> <!-- 관리자 페이지 연결 -->
+              <a href="#" title="로그아웃" id="logoutLink" style="display: none">로그아웃</a>
+              <a href="cart.html" title="장바구니" id="cartLink" style="display: none;">장바구니</a>
+              <span id="welcomeMessage" style="display: none;"></span>
+            </div>              
+            <ul class="navi">
+              <li><a href="1.menulist.html">메뉴</a> <!-- 상품페이지랑 연결 -->
+                <ul class="submenu">
+                  <li><a href="1.menulist.html">피자</a></li>
+                  <li><a href="#">하프앤하프</a></li>
+                  <li><a href="#">사이드디시</a></li>
+                  <li><a href="#">인기세트메뉴</a></li>
+                  <li><a href="#">마이키친</a></li>
+                  <li><a href="#">음료&기타</a></li>
+                </ul>
+              </li>
+              <li><a href="#">e-쿠폰</a>
+                <ul class="submenu">
+                  <li><a href="#">e-쿠폰 주문</a></li>
+                  <li><a href="#">e-쿠폰 사용 안내</a></li>
+                </ul>
+              </li>
+              <li><a href="#">상품권 선물</a>
+                <ul class="submenu">
+                  <li><a href="#">모바일상품권(도미노콘)</a></li>
+                  <li><a href="#">금액상품권</a></li>
+                  <li><a href="#">지류상품권</a></li>
+                  <li><a href="#">상품권 사용 안내</a></li>
+                </ul>
+              </li>
+              <li><a href="#">이벤트/제휴</a> 
+                <ul class="submenu">
+                  <li><a href="#">이벤트</a></li>
+                  <li><a href="#">제휴할인</a></li>
+                </ul>
+              </li>          
+              <li><a href="boardList.html?categoryId=1">공지사항</a> <!-- 공지사항페이지랑 연결 -->
+                <ul class="submenu">
+                  <li><a href="boardList.html?categoryId=1">도미노뉴스</a></li>
+                  <li><a href="boardList.html?categoryId=2">보도자료</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <main>
+        <main class="content">  
+            <p class="login-title">로그인</p>
+            <form id="login_form" class="form">
+                <div class="form_content">
+                    <div class="form_section">
+                        <div class="form_list">
+                            <label for="userId">아이디</label>
+                            <input type="text" id="userId" name="userId" placeholder="아이디를 입력하세요">
+
+                            <label for="password">비밀번호</label>
+                            <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요">
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_submit_wrap" id="divBtnLogin">
+                    <button type="submit" class="btn_submit" id="btnLogin">로그인</button>
+                </div>
+            </form>
+        </main>
+    </main>
+
+    <footer>
+        <div class="bottom">
+            <div class="btm_logo">
+                <img src="images/logo.png" alt="로고">
+                <p>1577-3082</p>
+            </div>
+            <div class="btmenu">
+                <ul>
+                    <li><a href="#">이용약관</a></li> 
+                    <li><a href="#"><b>개인정보 처리방침</b></a></li> 
+                    <li><a href="#"><b>위치기반 서비스</b></a></li> 
+                    <li><a href="#">청소년 보호방침</a></li> 
+                    <li><a href="#">영상정보처리기기 운영관리방침</a></li> 
+                    <li><a href="#">고객센터</a></li> 
+                    <li><a href="#">인재채용</a></li>
+                </ul>
+            </div>
+            <div class="copy">
+                <p>06223 서울특별시 강남구 역삼로 25길 35(역삼동,청오큐브타워) 청오디피케이㈜ ㅣ 대표이사:오광현,김영훈</p>
+                <p>사업자 등록번호:220-81-03371 ㅣ 통신판매업신고:강남 5064호 ㅣ 개인정보 보호책임자:윤여진 ㅣ 민원 책임자:임영길</p>
+                <p>문의:webmaster@dominos.co.kr</p>
+                <p>COPYRIGHTⓒ Domino's Pizza. ALL RIGHTS RESERVED</p>
+                <p>청오디피케이㈜의 사전 서면동의 없이 도미노피자 사이트(PC, 모바일, 앱)의 일체의 정보, 콘텐츠 및 UI 등을 상업적 목적으로 전재, 전송, 스크래핑 등 무단 사용할 수 없습니다.<br>
+                도미노피자에서 판매되는 모든 상품은 청오디피케이㈜에서 책임지고 있습니다.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+            $('#login_form').on('submit', function(event) {
+                event.preventDefault();
+
+                var userId = $('#userId').val();
+                var password = $('#password').val();
+
+                if (!userId) {
+                    alert('아이디를 입력하세요.');
+                    $('#userId').focus();
+                    return;
+                }
+
+                if (!password) {
+                    alert('비밀번호를 입력하세요.');
+                    $('#password').focus();
+                    return;
+                }
+
+                var users = JSON.parse(localStorage.getItem('users')) || [];
+
+                var foundUser = users.find(function(user) {
+                    return user.userId === userId && user.password === password;
+                });
+
+                if (foundUser) {
+                    alert(`${foundUser.userId}님 환영합니다.`);
+
+                    var currentUsers = JSON.parse(localStorage.getItem('currentUsers')) || [];
+
+                    var alreadyLoggedIn = currentUsers.some(function(user) {
+                        return user.userId === foundUser.userId;
+                    });
+
+                    if (!alreadyLoggedIn) {
+                        currentUsers.push(foundUser);
+                        localStorage.setItem('currentUsers', JSON.stringify(currentUsers));
+                    }
+
+                    window.location.href = 'index.html';
+                } else {
+                    alert('아이디 또는 비밀번호가 올바르지 않습니다.');
+                    $('#userId').focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

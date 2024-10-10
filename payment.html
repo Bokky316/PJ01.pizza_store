@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제하기</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/payment.css">
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="javascript/jquery-1.12.3.js" defer type="text/javascript"></script>
+    <script src="javascript/script.js" defer type="text/javascript"></script>
+    <script src="javascript/payment.js" defer type="text/javascript"></script>
+    <script src="./javascript/admin.js"></script>
+</head>
+<body>
+    <!-- navigation bar -->
+    <header>
+      <div class="top">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="로고"></a>
+        </div>
+        <div id="menu_bg"></div>   <!--서브메뉴 배경-->
+        <nav class="menu">
+          <div class="util_nav"> <!-- 로그인, 회원가입 / 관리자 (href=""에 연결시켜주기) -->
+            <a href="login.html" title="로그인" id="loginLink">로그인</a> <!-- 로그인 페이지 연결 -->
+            <a href="join.html" title="회원가입" id="signupLink">회원가입</a> <!-- 회원가입 페이지 연결 -->
+            <a href="admin.html" title="관리자" id="adminLink" style="display: none">관리자</a> <!-- 관리자 페이지 연결 -->
+            <a href="#" title="로그아웃" id="logoutLink" style="display: none">로그아웃</a>
+            <a href="cart.html" title="장바구니" id="cartLink" style="display: none;">장바구니</a>
+            <span id="welcomeMessage" style="display: none;"></span>
+          </div>    
+          <ul class="navi">
+            <li><a href="#">메뉴</a> <!-- 상품페이지랑 연결 -->
+              <ul class="submenu">
+                <li><a href="1.menulist.html">피자</a></li>
+                <li><a href="#">하프앤하프</a></li>
+                <li><a href="#">사이드디시</a></li>
+                <li><a href="#">인기세트메뉴</a></li>
+                <li><a href="#">마이키친</a></li>
+                <li><a href="#">음료&기타</a></li>
+              </ul>
+            </li>
+            <li><a href="#">e-쿠폰</a>
+              <ul class="submenu">
+                <li><a href="#">e-쿠폰 주문</a></li>
+                <li><a href="#">e-쿠폰 사용 안내</a></li>
+              </ul>
+            </li>
+            <li><a href="#">상품권 선물</a>
+              <ul class="submenu">
+                <li><a href="#">모바일상품권(도미노콘)</a></li>
+                <li><a href="#">금액상품권</a></li>
+                <li><a href="#">지류상품권</a></li>
+                <li><a href="#">상품권 사용 안내</a></li>
+              </ul>
+            </li>
+            <li><a href="#">이벤트/제휴</a> 
+              <ul class="submenu">
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">제휴할인</a></li>
+              </ul>
+            </li>          
+            <li><a href="boardList.html?categoryId=1">공지사항</a> <!-- 공지사항페이지랑 연결 -->
+              <ul class="submenu">
+                <li><a href="boardList.html?categoryId=1">도미노뉴스</a></li>
+                <li><a href="boardList.html?categoryId=2">보도자료</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+    <main>
+      <main class="content">
+       <p class="payment-title">결제하기</p>
+        <div class="section-box">
+            <h3>주문 상품 정보</h3>
+        <table id="order-items">
+            <thead>
+                <!-- <tr>
+                    <th>상품명</th>
+                    <th>옵션</th>
+                    <th>수량</th>
+                    <th>가격</th>
+                </tr> -->
+            </thead>
+            <tbody>
+                <!-- 여기에 주문 상품 정보가 동적으로 추가됩니다 -->
+            </tbody>
+        </table>
+        <p class="shipping-fee">
+          배송비 <span id="shipping-fee">0원</span>
+        </p>
+        <p class="total-order-amount">
+          총 주문 금액 <span id="totalPrice">0</span>
+        </p>
+    </div>
+    <!-- 주문자 정보 -->
+    <form id="checkout-form">
+        <div class="section-box">
+            <h3>주문자 정보</h3>
+            <!-- 정보 선택 옵션을 텍스트 클릭으로 변경 -->
+            <div class="info-option-group">
+                <span id="use-registered" class="info-option active">회원 정보와 동일</span>
+                <span id="new-input" class="info-option">새로운 정보 입력</span>
+            </div>
+
+            <div id="user-info">
+                <div class="form-group">
+                    <label for="name">주문자 이름</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">주문자 전화번호</label>
+                    <div class="phone-group">
+                        <input type="text" id="phone1" name="phone1" class="phone-input" maxlength="3" required>
+                        <span class="phone-separator">-</span>
+                        <input type="text" id="phone2" name="phone2" class="phone-input" maxlength="4" required>
+                        <span class="phone-separator">-</span>
+                        <input type="text" id="phone3" name="phone3" class="phone-input" maxlength="4" required>
+                    </div>
+                </div>
+
+                <!-- 주소와 상세주소를 한 줄에 표시 -->
+                <div class="address-group">
+                    <div class="form-group address-input-group">
+                        <label for="address">주문 주소</label>
+                        <div class="address-input-wrapper">
+                            <input type="text" id="address" name="address" readonly required>
+                            <button type="button" onclick="searchAddress()">주소 검색</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="detailAddress">상세주소</label>
+                        <input type="text" id="detailAddress" name="detailAddress" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-box">
+            <div class="form-group">
+                <label for="payment-method">결제 수단</label>
+                <select id="payment-method" name="paymentMethod" required>
+                    <option value="">선택하세요</option>
+                    <option value="credit-card">신용카드</option>
+                    <option value="bank-transfer">계좌이체</option>
+                    <option value="mobile-payment">모바일 결제</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" class="payment-btn">결제하기</button>
+    </form>
+  </main>
+    </main>
+    <!-- footer -->
+    <footer>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>footer</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery-1.12.3.js"></script>
+        <script src="js/script.js" defer type="text/javascript"></script>
+    </footer>
+    <body>
+        <footer>
+            <div class="bottom"> <!--bottom: 하단메뉴 + Copyright-->
+              <div class="btm_logo">
+                <img src="images/logo.png" alt="로고">
+                <p>1577-3082</p>
+              </div>
+              <div class="btmenu">
+                <ul>
+                  <li><a href="#">이용약관</a></li> 
+                  <li><a href="#"><b>개인정보 처리방침</b></a></li> 
+                  <li><a href="#"><b>위치기반 서비스</b></a></li> 
+                  <li><a href="#">청소년 보호방침</a></li> 
+                  <li><a href="#">영상정보처리기기 운영관리방침</a></li> 
+                  <li><a href="#">고객센터</a></li> 
+                  <li><a href="#">인재채용</a></li>
+                </ul>
+              </div>
+              <div class="copy">
+                <p>06223 서울특별시 강남구 역삼로 25길 35(역삼동,청오큐브타워) 청오디피케이㈜ ㅣ 대표이사:오광현,김영훈</p>
+                <p>사업자 등록번호:220-81-03371 ㅣ 통신판매업신고:강남 5064호 ㅣ 개인정보 보호책임자:윤여진 ㅣ 민원 책임자:임영길</p>
+                <p>문의:webmaster@dominos.co.kr</p>
+                <p>COPYRIGHTⓒ Domino's Pizza. ALL RIGHTS RESERVED</p>
+                <p>청오디피케이㈜의 사전 서면동의 없이 도미노피자 사이트(PC, 모바일, 앱)의 일체의 정보, 콘텐츠 및 UI 등을 상업적 목적으로 전재, 전송, 스크래핑 등 무단 사용할 수 없습니다.<br>
+                  도미노피자에서 판매되는 모든 상품은 청오디피케이㈜에서 책임지고 있습니다.</p>
+              </div>
+            </div>
+          </footer>
+    </html>
+</body>
+</html>

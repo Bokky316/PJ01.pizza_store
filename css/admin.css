@@ -1,0 +1,209 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* 추가한 부분 시작 */
+.admin-title { /* '관리자 페이지'라는 글씨 */
+  margin-top: 180px;
+  margin-left: 190px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #888;
+}
+
+h3 {
+  text-align: center;
+}
+/* 추가한 부분 끝 */
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#userTable {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+#userTable th,
+#userTable td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+#userTable th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+#userTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#userTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.save-btn {
+  padding: 5px 10px;
+  background-color: #238ece;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #238ece;
+}
+
+.styled-table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.styled-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.styled-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.styled-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.styled-table select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.styled-table .save-btn {
+  padding: 5px 10px;
+  background-color: #238ece;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.styled-table .save-btn:hover {
+  background-color: #238ece;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#userTable, #orderTable {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+#userTable th, #userTable td,
+#orderTable th, #orderTable td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+#userTable th, #orderTable th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+#userTable tr:nth-child(even), #orderTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#userTable tr:hover, #orderTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.save-btn {
+  padding: 5px 10px;
+  background-color: #238ece;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #238ece;
+}
+
+.styled-table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.styled-table th, .styled-table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.styled-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.styled-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.styled-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.styled-table select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.styled-table .save-btn {
+  padding: 5px 10px;
+  background-color: #238ece;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.styled-table .save-btn:hover {
+  background-color: #1c7bb9;
+}

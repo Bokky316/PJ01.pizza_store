@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko"></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>도미노피자</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- <link rel="stylesheet" href="./css/product.css" /> -->
+  <!-- <link rel="stylesheet" href="./css/admin.css" /> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="javascript/script.js"></script>
+  <script src="./javascript/index.js"></script>
+  <script src="./javascript/product.js"></script>
+  <script src="./javascript/admin.js"></script>
+</head>
+<body>
+  <!--와이어프레임 위 시작-->
+  <div id="wrap">
+    <header>
+      <div class="top">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="로고"></a>
+        </div>
+        <div id="menu_bg"></div>   <!--서브메뉴 배경-->
+        <nav class="menu">
+          <div class="util_nav"> <!-- 로그인, 회원가입 / 관리자 (href=""에 연결시켜주기) -->
+            <a href="login.html" title="로그인" id="loginLink">로그인</a> <!-- 로그인 페이지 연결 -->
+            <a href="join.html" title="회원가입" id="signupLink">회원가입</a> <!-- 회원가입 페이지 연결 -->
+            <a href="admin.html" title="관리자" id="adminLink" style="display: none">관리자</a> <!-- 관리자 페이지 연결 -->
+            <a href="#" title="로그아웃" id="logoutLink" style="display: none">로그아웃</a>
+            <a href="cart.html" title="장바구니" id="cartLink" style="display: none;">장바구니</a>
+            <span id="welcomeMessage" style="display: none;"></span>
+          </div>              
+          <ul class="navi">
+            <li><a href="1.menulist.html">메뉴</a> <!-- 상품페이지랑 연결 -->
+              <ul class="submenu">
+                <li><a href="1.menulist.html">피자</a></li>
+                <li><a href="#">하프앤하프</a></li>
+                <li><a href="#">사이드디시</a></li>
+                <li><a href="#">인기세트메뉴</a></li>
+                <li><a href="#">마이키친</a></li>
+                <li><a href="#">음료&기타</a></li>
+              </ul>
+            </li>
+            <li><a href="#">e-쿠폰</a>
+              <ul class="submenu">
+                <li><a href="#">e-쿠폰 주문</a></li>
+                <li><a href="#">e-쿠폰 사용 안내</a></li>
+              </ul>
+            </li>
+            <li><a href="#">상품권 선물</a>
+              <ul class="submenu">
+                <li><a href="#">모바일상품권(도미노콘)</a></li>
+                <li><a href="#">금액상품권</a></li>
+                <li><a href="#">지류상품권</a></li>
+                <li><a href="#">상품권 사용 안내</a></li>
+              </ul>
+            </li>
+            <li><a href="#">이벤트/제휴</a> 
+              <ul class="submenu">
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">제휴할인</a></li>
+              </ul>
+            </li>          
+            <li><a href="boardList.html?categoryId=1">공지사항</a> <!-- 공지사항페이지랑 연결 -->
+              <ul class="submenu">
+                <li><a href="boardList.html?categoryId=1">도미노뉴스</a></li>
+                <li><a href="boardList.html?categoryId=2">보도자료</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!--와이어프레임 위 끝-->
+  
+    <!--와이어프레임 중간 시작-->
+    <div class="imgslide">
+      <div class="slidelist">
+        <ul>
+          <li>
+            <a href="#">
+              <img src="images/img1.jpg" alt="이미지1">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/img2.jpg" alt="이미지2">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/img3.jpg" alt="이미지3">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/img4.jpg" alt="이미지3">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <!--bodywrap: shortcut, contents(notice, gallery) 묶어줌-->
+    <div class="bodywrap"> 
+      <div class="shortcut">
+        <a href="1.menulist.html"> <!-- 주문하기 페이지랑 연결 -->
+          <img src="images/icon1.png" alt="바로가기1"> 
+          <div class="shortcut_text">
+            <p>배달주문<img src="images/right_arrow_angleicon1.png" alt="바로가기1"></p>
+            <span>등급별 최대 30%</span>
+          </div>
+        </a>
+        <a href="1.menulist.html"> <!-- 주문하기 페이지랑 연결 -->
+          <img src="images/icon2.png" alt="바로가기2">
+          <div class="shortcut_text">
+            <p>포장주문<img src="images/right_arrow_angleicon2.png" alt="바로가기1"></p>
+            <span>등급별 최대 40%</span>
+          </div>
+        </a>
+        <a href="delivery_inquiry.html"> <!-- 주문배달현황조회 페이지랑 연결 -->
+          <img src="images/search_icon.png" alt="바로가기3">
+          <div class="shortcut_text">
+            <p>주문조회<img src="images/right_arrow_angleicon3.png" alt="바로가기1"></p>
+            <span>주문·배달 현황</span>
+          </div>
+        </a>
+        <a href="boardList.html?categoryId=1"> <!-- 공지사항 페이지랑 연결 -->
+          <img src="images/notice_icon.png" alt="바로가기3">
+          <div class="shortcut_text">
+            <p>공지사항<img src="images/right_arrow_angleicon3.png" alt="바로가기1"></p>
+            <span>도미노 뉴스/보도자료</span>
+          </div>
+        </a>
+      </div>
+     
+      <div class="benefit">
+        <div class="benefit_text">
+          <p>도미노피자의<br>
+            <strong>다양한 할인 혜택</strong><br>
+            확인해 보세요!
+          </p>
+        </div>
+        <div class="benefit_contents">
+          <div class="benefit_cont">
+            <p>도미노<br>매니아만의<br><span>혜택보기!</span></p>
+          </div>
+          <div class="benefit_cont">
+            <p>제휴할인<br><span>혜택보기!</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--bodywrap 끝-->
+    <!--와이어프레임 중간 끝-->
+  
+    <!-- 팝업창 영역 -->
+    <div id="benefit_back"></div>
+    <div id="benefit_popupwrap"> <!-- 혜택보기 누를 때 뜨는 팝업창 -->
+      <div class="membership_popup"> <!-- 도미노 매니아만의 혜택보기 -->
+        <img src="images/membership.jpg" alt="멤버쉽혜택안내">
+      </div>
+      <div class="discount_popup"> <!-- 제휴할인 혜택보기 -->
+        <img src="images/discount.jpg" alt="제휴할인혜택안내">
+      </div>
+      <button type="button">닫기</button>
+    </div> <!-- 팝업창 영역 끝 -->
+  
+    <!--와이어프레임 하단 시작-->
+    <footer>
+      <div class="bottom"> <!--bottom: 하단메뉴 + Copyright-->
+        <div class="btm_logo">
+          <img src="images/logo.png" alt="로고">
+          <p>1577-3082</p>
+        </div>
+        <div class="btmenu">
+          <ul>
+            <li><a href="#">이용약관</a></li> 
+            <li><a href="#"><b>개인정보 처리방침</b></a></li> 
+            <li><a href="#"><b>위치기반 서비스</b></a></li> 
+            <li><a href="#">청소년 보호방침</a></li> 
+            <li><a href="#">영상정보처리기기 운영관리방침</a></li> 
+            <li><a href="#">고객센터</a></li> 
+            <li><a href="#">인재채용</a></li>
+          </ul>
+        </div>
+        <div class="copy">
+          <p>06223 서울특별시 강남구 역삼로 25길 35(역삼동,청오큐브타워) 청오디피케이㈜ ㅣ 대표이사:오광현,김영훈</p>
+          <p>사업자 등록번호:220-81-03371 ㅣ 통신판매업신고:강남 5064호 ㅣ 개인정보 보호책임자:윤여진 ㅣ 민원 책임자:임영길</p>
+          <p>문의:webmaster@dominos.co.kr</p>
+          <p>COPYRIGHTⓒ Domino's Pizza. ALL RIGHTS RESERVED</p>
+          <p>청오디피케이㈜의 사전 서면동의 없이 도미노피자 사이트(PC, 모바일, 앱)의 일체의 정보, 콘텐츠 및 UI 등을 상업적 목적으로 전재, 전송, 스크래핑 등 무단 사용할 수 없습니다.<br>
+            도미노피자에서 판매되는 모든 상품은 청오디피케이㈜에서 책임지고 있습니다.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!--와이어프레임 하단 끝-->
+</body>
+</html>
+
+

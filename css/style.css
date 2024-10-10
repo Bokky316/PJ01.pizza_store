@@ -1,0 +1,400 @@
+/* CSS Document */
+* {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  /* font-family: "맑은 고딕"; */
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+/* 전체 감싸는 wrap */
+#wrap {
+  min-width: 1200px;
+  min-height: 900px;
+  font-size: 20px;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 130px;
+}
+
+/* header- 로고, nav */
+header {
+  width: 100%;
+  height: 130px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.top {
+  width: 1200px;
+}
+/* 로고 */
+.logo {
+  float: left;
+  width: 200px;
+  height: 100px;
+}
+.logo img {
+  float: left;
+  width: 180px;
+  height: 80px;
+  object-fit: contain;
+}
+/* 로그인, 회원가입/ 관리자, 로그아웃 */
+.util_nav {
+  float: right;
+  width: auto;
+  height: 40px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.util_nav a {
+  display: block;
+  float: left;
+  width: auto;
+  font-size: 14px;
+  margin: 0 5px;
+  padding: 0px 8px;
+  color: #333;
+  line-height: 40px;
+}
+.util_nav span {
+  font-size: 14px;
+  padding: 11px 0px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+/* nav */
+.menu {
+  float: left;
+  width: 1000px;
+  z-index: 1;
+}
+#menu_bg {
+  width: 100%;
+  height: 340px;
+  position: absolute;
+  top: 130px;
+  left: 0px;
+  background-color: #fff;
+  z-index: 2;
+  display: none;
+}
+.navi {
+  float: left;
+  width: 1000px;
+  box-sizing: border-box;
+}
+.navi>li {
+  float: left;
+  width: 200px;
+  height: 50px;
+}
+.navi>li>a {
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #353535;
+  position: relative;
+}
+.navi>li>a:hover{
+  color: #238ece;;
+}
+/* nav - 서브메뉴 */
+.submenu {
+  width: 200px;
+  height: 330px;
+  position: relative;
+  z-index: 3;
+  display: none;
+}
+.submenu>li {
+  float: left;
+  width: 200px;
+  height: 55px;
+  display: inline;
+}
+.submenu>li>a {
+  line-height: 55px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #000;
+}
+.submenu>li>a:hover {
+  color: #238ece;;
+  text-decoration: underline;
+}
+
+/* slide */
+.imgslide {
+  width: 100%;
+  height: 495px;
+  position: relative;
+  overflow: hidden;
+}
+.slidelist {
+  width: 400%;
+  height: 1200px;
+}
+.slidelist ul li {
+  width: 25%;
+  height: 495px;
+  margin: 0;
+  float: left;
+}
+.slidelist img {
+  width: 100%;
+  height: 495px;
+  object-fit: cover;
+}
+
+/* content */
+.bodywrap {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* 바로가기 */
+.shortcut {
+  width: 1200px;
+  height: 230px;
+  float: left;
+  display: flex;
+  padding: 40px 0px;
+}
+.shortcut a {
+  width: 330px;
+  padding-left: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.shortcut img { /* 바로가기 맨위 그림 아이콘 */
+  float: left;
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  margin: 20px 0px 0px;
+}
+.shortcut_text {
+  width: 100%;
+}
+.shortcut_text p {
+  font-size: 42px;
+  letter-spacing: -4px;
+  float: left;
+  color: #000;
+}
+.shortcut a:first-child p {
+  color: #ff143c;
+}
+.shortcut a:nth-child(2) p {
+  color: #1382ff;
+}
+.shortcut_text img { /* 바로가기 중간 화살표 아이콘 */
+  width: 35px;
+  height: 35px;
+  float: right;
+  margin-left: 20px;
+  margin-top: 11px;
+}
+.shortcut_text span {
+  float: left;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #888;
+  margin-top: 17px;
+  padding-left: 4px;
+}
+
+/* 할인 혜택 */
+.benefit {
+  width: 100%;
+  height: 400px;
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.benefit_text { /* 왼쪽 - 텍스트 */
+  width: 300px;
+  height: 120px;
+  margin: 0px 0px 0px 60px;
+}
+.benefit_text p {
+  font-size: 28px;
+}
+.benefit_text p strong {
+  color: #238ece;
+}
+.benefit_contents {
+  margin: 0 0 0 250px;
+}
+.benefit_cont { /* 오른쪽 - 혜택보기 박스 2개 */
+  width: 210px;
+  height: 210px;
+  background-color: #ccc;
+  float: left;
+  margin: 0px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.benefit_cont p {
+  color: #fff;
+  font-size: 22px;
+}
+.benefit_cont span {
+  color: #fff;
+  font-weight: bold;
+  font-size: 28px;
+}
+.benefit_contents .benefit_cont:first-child {
+  background-color: #67c2ff;
+
+}
+.benefit_contents .benefit_cont:nth-child(2) {
+  background-color: #333;
+}
+
+/* 팝업창 */
+#benefit_back { /* 팝업창 배경 */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: none;
+}
+#benefit_popupwrap { /* 팝업 */
+  width: 750px;
+  height: 600px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px #bbb;
+  display: none;
+  text-align: center;
+}
+.membership_popup img { /* 도미노 매니아만의 혜택보기 팝업 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 20px 0px 10px;
+  display: none;
+}
+.discount_popup img{ /* 제휴할인 혜택보기 팝업 */
+  width: 62%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+}
+#benefit_popupwrap button { /* 닫기버튼 */
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #0078ae;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  height: 300px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.bottom {
+  width: 1200px;
+  height: 120px;
+  padding: 35px 0px 0px;
+}
+.btm_logo { /* 하단 로고, 전화번호 */
+  width: 300px;
+  height: 50px;
+  float: left;
+}
+.btm_logo img { /* 하단 로고 */
+  width: 130px;
+  height: 36px;
+  object-fit: contain;
+  float: left;
+}
+.btm_logo p { /* 전화번호 */
+  float: left;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 13px;
+}
+
+.btmenu { /* 이용약관, 개인정보 처리방침... */
+  float: left;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  padding-left: 5px;
+  font-size: 16px;
+  line-height: 50px;
+}
+.btmenu ul {
+  text-align: left;
+}
+.btmenu li {
+  display: inline;
+  padding-right: 20px;
+}
+.btmenu a {
+  display: inline;
+  color: #888;
+}
+.btmenu b {
+  color: #333;
+}
+.copy {
+  float: left;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  text-align: left;
+  font-size: 16px;
+}
+.copy p {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.75;
+}

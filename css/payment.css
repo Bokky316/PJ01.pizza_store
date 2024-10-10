@@ -1,0 +1,182 @@
+main {
+    width: 1200px;
+    padding: 20px;
+    margin: 80px auto 100px;
+    font-size: 16px;
+}
+
+.payment-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* 섹션 박스 스타일 */
+.section-box {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    /* border-radius: 5px; */
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+
+/* 테이블 스타일 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+    th, td {
+        border: none;
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f8f8f8;
+    }
+
+/* 폼 요소 스타일 */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* 주소 관련 스타일 */
+.address-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+    .address-input-group {
+        flex: 1 1 60%;
+    }
+
+    .address-input-wrapper {
+        display: flex;
+        gap: 10px;
+    }
+
+        .address-input-wrapper input {
+            flex: 1;
+        }
+
+        .address-input-wrapper button {
+            white-space: nowrap;
+        }
+
+    .address-group .form-group:last-child {
+        flex: 1 1 30%;
+    }
+
+/* 전화번호 관련 스타일 */
+.phone-group {
+    display: flex;
+    align-items: center;
+}
+
+    .phone-input {
+        width: 30%;
+        display: inline-block;
+    }
+
+    .phone-separator {
+        display: inline-block;
+        width: 5%;
+        text-align: center;
+    }
+
+/* 정보 옵션 그룹 스타일 */
+.info-option-group {
+    /* display: flex;
+    justify-content: flex-start; */
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: auto;
+
+}
+
+    .info-option {
+        cursor: pointer;
+        /* margin-right: 20px; */
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+
+    .info-option.active {
+        border: 1px solid #238ece;
+        color: #238ece;
+    }
+
+/* 총 주문 금액 스타일 */
+.shipping-fee {
+    font-size: 1em;
+    font-weight: 600;
+    color: #8f8f8f;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.total-order-amount {
+    font-size: 1em;
+    font-weight: 600;
+    color: #111;
+    margin-top: 10px;
+    text-align: left;
+}
+
+    .total-order-amount #total-price {
+        font-size: 1.1em;
+        color: black;
+        margin-left: 10px;
+    }
+
+/* 결제 버튼 스타일 */
+.payment-btn {
+    background-color: #238ece;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 100%;
+    cursor: pointer;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+
+
+}
+
+    .payment-btn:hover {
+        background-color: #1c7bb9;
+    }
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .address-group {
+        flex-direction: column;
+    }
+
+    .address-input-group,
+    .address-group .form-group:last-child {
+        flex: 1 1 100%;
+    }
+}

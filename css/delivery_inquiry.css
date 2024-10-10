@@ -1,0 +1,88 @@
+/* 주문현황 컨텐츠 전체를 감싸는 div */
+#srch_container{
+    width:1000px;
+    margin:0 auto;
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+
+h1 {
+    color: #111; 
+    font-weight: 300;
+    padding:40px 0;
+    border-bottom: 2px solid #111;
+}
+
+form{
+    text-align: center;
+    margin-top:50px;
+}
+
+#orderIdInput {
+    width:52%;
+    padding: 10px; 
+    margin-right: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: 16px; 
+}
+
+button {
+    padding: 8px 15px; 
+    background-color: #238ece;; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-size: 16px; 
+}
+
+#orderStatus { 
+    width:60%;
+    margin:0 auto;
+    margin-top:30px;
+    margin-bottom: 50px;
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    background-color: #fff; 
+    text-align: center;
+    height: 240px;
+}
+
+/* orderStatus에 보여지는 태그들 */
+#orderStatus h3{
+    font-weight: 300;
+    border-bottom:1px solid #238ece;;
+    width:350px;
+    padding: 15px 0;
+    margin:0 auto;
+}
+
+#orderStatus p{
+    font-size: 16px;
+    padding-top: 40px;
+}
+
+#orderStatus p span{
+    font-weight: bold;
+}
+
+/* 주문취소 안내박스 */
+.ptext_box{
+    width:100%;
+    margin:0 auto;
+    font-size: 15px;
+    background-color: #0078ae;
+    color:#e9e9e9;
+    padding:20px 0;
+}
+
+.ptext_box p{
+    margin-left: 120px;
+}
+
+.ptext_box span{
+    font-weight: bold;
+    font-size: 16.2px;
+}

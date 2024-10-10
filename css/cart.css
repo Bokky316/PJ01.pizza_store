@@ -1,0 +1,297 @@
+main {
+    width: 1200px;
+    padding: 20px;
+    margin: 80px auto 100px;
+    font-size: 16px;
+}
+
+.cart-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 0; 
+}
+
+#select-all-btn, #select-delete-btn {
+    background-color: transparent;
+    color: #666;    
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin: 0; 
+}
+
+#select-all-btn:hover, #select-delete-btn:hover {
+    color: #323232;
+    text-decoration: underline;
+}
+
+/* 장바구니 아이템 */
+.cart-item {
+    border-top: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: transparent;
+}
+
+.item-content {
+    display: flex;
+    /* align-items: center; */
+    margin: 0;
+}
+
+.item-image {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: auto;
+    margin-right: 20px;
+    z-index: -1;
+    position: relative;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.item-options, .item-quantity, .item-total {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.item-total {
+    font-weight: bold;
+    color: #111
+}
+
+/* 체크박스 디자인 */
+.item-checkbox {
+    display: none;
+}
+
+.item-checkbox-label {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #cecece;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.item-checkbox-label::after {
+    content: '';
+    position: absolute;
+    display: none;
+ 
+    width: 3px;
+    height: 7px;
+
+    left: 5px;
+    top: 3px;
+    transform: translate(-50%, -50%);
+    border: solid #238ece;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.item-checkbox:checked + .item-checkbox-label {
+    background-color: transparent;
+    border-color: #238ece;
+}
+
+.item-checkbox:checked + .item-checkbox-label::after {
+    display: block;
+}
+
+
+/* 아이템 액션 */
+.item-actions {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+/* 버튼 스타일 */
+.btn, .item-delete-btn, .order-btn, .edit-btn{
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn, .edit-btn, .item-delete-btn{
+    background-color: transparent;
+    color: #333;
+    border: none;
+    cursor: pointer;
+}
+
+/* 주문 요약 */
+#order-summary {
+    margin-top: 30px;
+    border-top: 2px solid #ddd;
+    padding-top: 30px;
+}
+
+.summary-item, .summary-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+.summary-total {
+    font-weight: 600;
+    color: #238ece;
+    font-size: 18px;
+}
+
+/* 주문 버튼 */
+.order-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+span {
+    margin: 0;
+}
+
+#order-button {
+    padding: 15px 30px;
+    width: 100%;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#order-button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+}
+
+#order-button:enabled {
+    background-color: #238ece;
+    color: white;
+}
+
+#order-button:enabled:hover {
+    background-color: #1c7bb9;
+}
+
+/* 모달 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 폼 스타일 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* 반응형 조정 */
+@media screen and (max-width: 1200px) {
+    main {
+        width: 95%;
+    }
+    
+    #cart-items, #order-summary, .order-button, .cart-title, .cart-header {
+        max-width: 100%;
+    }
+    
+    .cart-item, #order-summary {
+        padding: 15px;
+    }
+    
+    .item-image {
+        width: 80px;
+    }
+    
+    .btn, .item-delete-btn, .order-btn, .select-delete-btn, .edit-btn {
+        padding: 6px 12px;
+        font-size: 0.85em;
+    }
+    
+    #order-button {
+        padding: 15px 30px;
+        font-size: 1em;
+    }
+}
